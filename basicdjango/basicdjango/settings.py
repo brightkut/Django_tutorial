@@ -30,7 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# when run python manage.py migrate will set up component in INSTALLED_APPS
 INSTALLED_APPS = [
+    'hello.apps.HelloConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,10 +75,16 @@ WSGI_APPLICATION = 'basicdjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+#NAME is a name of DB not table
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sampledatabase',
+        'USER': 'root',
+        'PASSWORD': 'bright356',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

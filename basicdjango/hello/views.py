@@ -13,5 +13,7 @@ def index(request):
       'food': ['water','soda','apple']
 
   }
+
+  #sent object dict by parameter
   return HttpResponse(template.render(human,request))
 
